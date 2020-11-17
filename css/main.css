@@ -1,0 +1,241 @@
+/* --------------------------------------------
+	
+	Project 	: Clean Minimal Portfolio
+	Author 		: Chinmay Mulay 
+
+	CONTEXT:
+	
+	1. BASE
+	2. HELPERS
+	3. LAYOUT 
+	4. ELEMENTS 
+	5. MEDIA QUERIES
+	
+ -------------------------------------------- */
+
+/*  --------------------------------------------
+	1. BASE
+    -------------------------------------------- */ 
+html,
+body {
+	width: 100%; height: 100%; padding: 0; margin: 0; box-sizing: border-box;
+	}
+* {
+	box-sizing: border-box;
+	}
+body {
+	font-family: 'HK Grotesk', sans-serif; color: #222; font-size: 14px; line-height: 1.7; display: flex; align-items: center;
+	}
+img {
+	max-width: 100%; height: auto;
+	}
+::selection {
+ 	text-shadow: none; color: #000; background: #FFF9CD;
+	}
+::-moz-selection {
+ 	text-shadow: none; color: #000; background: #FFF9CD;
+	}
+/* Loader */
+html {
+	overflow: hidden;
+	}
+html.loaded {
+	overflow: auto;
+	}
+html:after {
+	content: ""; position: fixed; z-index: 1000; top: 0; left: 0; right: 0; bottom: 0; background: white; background-image: url(../images/preloader.gif); background-position: center center; background-repeat: no-repeat; background-size: 48px 48px;
+	}
+html.loaded:after {
+	display: none;
+	}
+body {
+	transition: all .6s cubic-bezier(0.77, 0, 0.175, 1); opacity: 0;
+	}
+html.loaded body {
+	opacity: 1;
+	}
+
+/*  --------------------------------------------
+	2. HELPERS
+    -------------------------------------------- */ 
+.rounded {
+	border-radius: 50%;
+	}
+.is-text-align-center {
+	text-align: center;
+	}
+.is-copy {
+	font-size: medium;
+	}
+	
+/*  --------------------------------------------
+	3. LAYOU
+    -------------------------------------------- */ 
+
+/* CONTENT */
+.content-wrap {
+	width: 80%; margin: 0 auto; max-height: 100%; position: relative; z-index: 20;
+	}
+.content {
+	padding: 3em 0;
+	}
+	
+/* PROFILE IMAGE */
+.profile-image {
+	max-height: 92px;
+	}
+
+/*  --------------------------------------------
+	4. ELEMENTS
+    -------------------------------------------- */ 	
+
+/* SOCIAL LINKS */
+.social-link {
+	display: inline-block; margin: 8px 2px 8px 0; text-decoration: none; user-select: none;
+	}
+.social-link:active {
+	transform: scale(0.8);
+	}
+.social-link:before {
+	display: inline-block; padding: 0; text-align: center; font-size: 14px; font-family: "fontello"; width: 32px; line-height: 32px; color: #555; border: 1px solid #eee; border-radius: 50%; text-decoration: none; transition: all 0.3s;
+	}
+html a.social-link:hover:before {
+	color: #fff; background: #444; border-color: transparent;
+	}
+.social-link.facebook:before {
+	content: '\e825'; color: #3c5fac; border-color: #3c5fac;
+	}
+.social-link.twitter:before {
+	content: '\e826'; color: #5ec3df; border-color: #5ec3df;
+	}
+.social-link.flickr:before {
+	content: '\e835'; color: #FF0084; border-color: #FF0084;
+	}
+.social-link.linkedin:before {
+	content: '\e827'; color: #2089b5; border-color: #2089b5;
+	}
+.social-link.github:before {
+	content: '\e82a'; color: #222; border-color: #222;
+	}
+.social-link.youtube:before {
+	content: "\e834"; color: #c8312b; border-color: #c8312b;
+	}
+.social-link.instagram:before {
+	content: "\e8cc"; color: #e1306c; border-color: #e1306c;
+	}
+.social-link.stack-overflow:before {
+	content: "\e83c"; color: #F90; border-color: #F90;
+	}
+.social-link.email:before {
+	content: "\e87e"; color: #222; border-color: #222;
+	}
+.social-link.facebook:hover:before {
+	background-color: #3c5fac;
+	}
+.social-link.twitter:hover:before {
+	background-color: #5ec3df;
+	}
+.social-link.linkedin:hover:before {
+	background-color: #2089b5;
+	}
+.social-link.youtube:hover:before {
+	background-color: #c8312b;
+	}
+.social-link.github:hover:before {
+	background-color: #222;
+	}
+.social-link.instagram:hover:before {
+	background-color: #e1306c;
+	}
+.social-link.stack-overflow:hover:before {
+	background-color: #F90;
+	}
+.social-link.email:hover:before {
+	background-color: #222;
+	}
+
+/* LINK HOVER EFFECTS */
+
+/* LINK 1 */
+.link-1 {
+  position: relative; text-decoration: none; display: inline-block; color: inherit; padding: 0 1px; transition: color ease 0.3s;
+	}
+.link-1:after {
+  content: ''; position: absolute; z-index: -1; width: 100%; height: 6%; min-height: 2px; left: 0; bottom: 0; background-color: #222; transition: all ease 0.3s;
+	}
+.link-1:hover {
+  	color: #fff;
+	}
+.link-1:hover:after {
+  	height: 100%;
+	}
+
+/* LINK 2 */
+.link-2 {
+  position: relative; text-decoration: none; display: inline-block; color: inherit; padding: 0 1px; transition: color ease 0.3s;
+	}
+.link-2:before, 
+.link-2:after {
+ 	content: ''; position: absolute; background-color: #222; z-index: -1; height: 2px;
+	}
+.link-2:before {
+ 	width: 0%; left: 0; bottom: 0; transition: width ease 0.4s;
+	}
+.link-2:after {
+  	width: 100%; left: 0; bottom: 0; transition: all ease 0.6s;
+	}
+.link-2:hover:before {
+  	width: 100%;
+	}
+.link-2:hover:after {
+  	left: 100%; width: 0%; transition: all ease 0.2s;
+	}
+
+
+/*  --------------------------------------------
+	5. MEDIA QUERIES
+    -------------------------------------------- */ 
+
+/* TABLETS */
+@media screen and (min-width: 768px) {
+	
+	body {
+		font-size: 19px;
+		}
+		
+	.profile-image {
+		max-height: 128px;
+		}	
+	
+	h1 { 
+		font-size: 4vw; line-height: 1;
+		}
+	
+}
+
+/* DESKTOPS */
+@media screen and (min-width: 1200px) {
+	
+	.content-wrap {
+		width: 50%;
+		}
+	
+	/* BUTTONS */
+	.button.huge {
+		font-size: 20px; padding: 22px 40px;
+		}
+		
+}
+
+/* DESKTOPS HIGH RES */
+@media screen and (min-width: 1600px) {
+	
+	.content-wrap {
+		width: 50%;
+		}
+		
+	.content {
+		padding: 6em 0;
+		}
+	
+}
